@@ -15,8 +15,11 @@ img {
     height: 10ch;
     display: flex;
     justify-content: space-evenly;
-    box-shadow: 0px 4px 6px -6px black;
     padding: auto;
+}
+
+#menu h2 {
+padding: 10px;
 }
 
 
@@ -35,4 +38,17 @@ img {
 #menuBtn:hover {
     background-color: white;
     color: #37a29b;
+}
+
+#datarow {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 40%;
+}
+
+#visteData {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
 }

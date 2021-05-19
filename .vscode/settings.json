@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/eca0be01-4062-4c00-afd7-900224cc2884/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/VisblueServiceApp",
+    "appService.deploySubpath": "."
+}
