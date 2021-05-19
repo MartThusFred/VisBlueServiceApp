@@ -1,1 +1,32 @@
-[{"name":"Harry Potter","species":"human","gender":"male","house":"Gryffindor","dateOfBirth":"31-07-1980","yearOfBirth":1980,"ancestry":"half-blood","eyeColour":"green","hairColour":"black","wand":{"wood":"holly","core":"phoenix feather","length":11},"patronus":"stag","hogwartsStudent":true,"hogwartsStaff":false,"actor":"Daniel Radcliffe","alive":true,"image":"http://hp-api.herokuapp.com/images/harry.jpg"},{"name":"Hermione Granger","species":"human","gender":"female","house":"Gryffindor","dateOfBirth":"19-09-1979","yearOfBirth":1979,"ancestry":"muggleborn","eyeColour":"brown","hairColour":"brown","wand":{"wood":"vine","core":"dragon heartstring","length":""},"patronus":"otter","hogwartsStudent":true,"hogwartsStaff":false,"actor":"Emma Watson","alive":true,"image":"http://hp-api.herokuapp.com/images/hermione.jpeg"}]
+[
+{
+  "MessageType": "TagValues",
+  "WagoProtocol": "1.5.0",
+  "CollectionId": 0,
+  "TagData": [
+    {
+      "Time": "2021-05-19T11:38:40.5410000",
+      "Values": {
+        "BatChrgkWh": 14.665990829467773,
+        "BatDischrgkWh": 0.22181656956672668,
+        "BatSOC": 5.256776332855225,
+        "BatPower": 0,
+        "GridPower": 0,
+        "SolarPower": 0.5280002951622009,
+        "BuildingConsump": 26.95037269592285,
+        "CustomerID": 1
+      }
+    }
+  ],
+  "EventProcessedUtcTime": "2021-05-19T12:36:42.4639423Z",
+  "PartitionId": 1,
+  "EventEnqueuedUtcTime": "2021-05-19T11:38:43.0870000Z",
+  "IoTHub": {
+    "MessageId": null,
+    "CorrelationId": null,
+    "ConnectionDeviceId": "VRFB_LB6",
+    "ConnectionDeviceGenerationId": "637406101967253739",
+    "EnqueuedTime": "2021-05-19T11:38:43.0250000Z",
+    "StreamId": null
+  }
+}]

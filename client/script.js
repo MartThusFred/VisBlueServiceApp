@@ -1,10 +1,16 @@
-const API_URL = "http://hp-api.herokuapp.com/api/characters"
-//const API_URL = "http://localhost:3000/api/v1/data"
+const API_URL = "http://localhost:3000/data_update"
 
-const dataList = [];
+var dataList = [];
+var setup = [];
 
 getData()
+    .then(setUpSite);
+
+setInterval(() => {
+    getData()
     .then(DisplayData);
+}, 2000);
+
 
 function getData() {
     return fetch(API_URL)
@@ -14,8 +20,17 @@ function getData() {
 function DisplayData(data) {
     dataList = data;
     dataList.forEach(data => {
-        document.getElementById("data").innerHTML += data.name + "<br>";
+        document.getElementById(data.ConnectionDeviceId).innerHTML += data.GridPower;
     });
 }
 
-//DisplayData();
+function setUpSite(dataForSetup) {
+    dataForSetup.forEach(dataElement => {
+        var nameDiv = document.createElement('div');
+        nameDiv.setAttribute('id', 'nameDiv');
+        document.getElementById('nameDiv').innerHTML = `
+        <p>GridPower for Battery(${dataElement.ConnectionDeviceId}) = <p id="${dataElement.ConnectionDeviceId}"></p></p>
+        `;
+        document.getElementById("data").appendChild(nameDiv);
+    });
+}
