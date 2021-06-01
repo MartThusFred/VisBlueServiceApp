@@ -15,8 +15,12 @@ function setUpSite(data) {
         <p> Batteri (${element.ConnectionDeviceId}): </p>
         <div id="visteData">
             <p>GridPower = <p id="${element.ConnectionDeviceId}"> </p></p>
+
+        <div id="${element.ConnectionDeviceId}-status"></div>    
         </div>
         ` 
+        
+        //document.getElementById(element.ConnectionDeviceId).style.backgroundColor = "white";
         document.getElementById("data").appendChild(div);
     });
 } 
@@ -36,6 +40,13 @@ function DisplayData(data) {
     dataList = data;
     dataList.forEach(dataElement => {
         document.getElementById(dataElement.ConnectionDeviceId).innerHTML = dataElement.GridPower;
+        document.getElementById(dataElement.ConnectionDeviceId).style.height = "2ch";
+        document.getElementById(dataElement.ConnectionDeviceId).style.width = "5ch";
+        if(dataElement.GridPower > 0) {
+            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "green";
+        } else {
+            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "red";
+        }
     });
 }
 
