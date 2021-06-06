@@ -14,7 +14,7 @@ function setUpSite(data) {
         div.innerHTML += `
         <p> Batteri (${element.ConnectionDeviceId}): </p>
         <div id="visteData">
-            <p>GridPower = <p id="${element.ConnectionDeviceId}"> </p></p>
+            <p>Alarm 1 = <p id="${element.ConnectionDeviceId}"> </p></p>
 
         <div id="${element.ConnectionDeviceId}-status"></div>    
         </div>
@@ -39,13 +39,13 @@ function getData() {
 function DisplayData(data) {
     dataList = data;
     dataList.forEach(dataElement => {
-        document.getElementById(dataElement.ConnectionDeviceId).innerHTML = dataElement.GridPower;
+        document.getElementById(dataElement.ConnectionDeviceId).innerHTML = dataElement.Alarm1;
         document.getElementById(dataElement.ConnectionDeviceId).style.height = "2ch";
         document.getElementById(dataElement.ConnectionDeviceId).style.width = "5ch";
-        if(dataElement.GridPower > 0) {
-            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "green";
-        } else {
+        if(dataElement.Alarm1 > 0) {
             document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "red";
+        } else {
+            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "green";
         }
     });
 }

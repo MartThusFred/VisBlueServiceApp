@@ -10,9 +10,23 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view enpm app.jsngine', 'jade');
+
+
+//const http = require('http')
+//const fs = require('fs')
+//
+//const server = http.createServer((req, res) => {
+//  res.writeHead(200, { 'content-type': 'text/html' })
+//  fs.createReadStream('./client/index.html').pipe(res)
+//})
+// hej
+//server.listen(process.env.PORT || 3000)
+
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
