@@ -34,6 +34,12 @@ app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.json({
+    message: 'hello world!!'
+  });
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -51,11 +57,9 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.json({
-    message: "Halloooooooooooooooooooooooooooooo!!",
     message: err.message,
     error: err
   });
-  console.log(err.message);
 });
 
 module.exports = app;
