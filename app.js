@@ -37,7 +37,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   const html = `
-  <h1>Visblue</h1>
+  <h1>Visblue Service App</h1>
   `;
   res.send(html);
 });
