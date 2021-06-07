@@ -25,13 +25,13 @@ var app = express();
 // hej
 //server.listen(process.env.PORT || 3000)
 
-const csp = require('express-csp-header');
-app.use(csp({
-    policies: {
-        'default-src': [csp.NONE],
-        'img-src': [csp.SELF],
-    }
-}));
+//const csp = require('express-csp-header');
+//app.use(csp({
+//    policies: {
+//        'default-src': [csp.NONE],
+//        'img-src': [csp.SELF],
+//    }
+//}));
 
 
 app.use(logger('dev'));
