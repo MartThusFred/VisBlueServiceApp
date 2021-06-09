@@ -71,7 +71,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
   
-  res.sendFile(__filename, index.html);
+  response.sendfile('index.html');
 });
 
 app.use('/', indexRouter);
