@@ -26,6 +26,42 @@ var app = express();
 //server.listen(process.env.PORT || 3000)
 
 
+const html = `
+  <h1>Visblue Service App</h1>
+  
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisBlue Services App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <img src="graphics/Visblue logo.png" alt="VisBlue logo">
+        <h2>VisBlue service app</h2>
+        <!--
+        <button id="menuBtn">knap 1</button>
+        <button id="menuBtn">knap 2</button>
+        <button id="menuBtn">knap 3</button> 
+        -->
+    </div>
+
+    <hr>
+
+    <main>
+    <div id="data">
+        <p>Her skal data vises</p>
+    </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>`;
+
+
 
 
 app.use(logger('dev'));
@@ -36,9 +72,7 @@ app.use(cookieParser());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  const html = `
-  <h1>Visblue Service App</h1>
-  `;
+  
   res.send(html);
 });
 
@@ -65,3 +99,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

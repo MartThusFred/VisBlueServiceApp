@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/data_update"
+const API_URL = "https://testserviceapptest.azurewebsites.net/data_update"
 
 var dataList = [];
 var setup = [];
@@ -14,7 +14,7 @@ function setUpSite(data) {
         div.innerHTML += `
         <p> Batteri (${element.ConnectionDeviceId}): </p>
         <div id="visteData">
-            <p>Alarm 1 = <p id="${element.ConnectionDeviceId}"> </p></p>
+            <p>Alarm discharge 1 = <p id="${element.ConnectionDeviceId}"> </p></p>
 
         <div id="${element.ConnectionDeviceId}-status"></div>    
         </div>
