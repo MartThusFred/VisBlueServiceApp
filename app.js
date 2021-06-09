@@ -70,7 +70,7 @@ app.use(cookieParser());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.sendfile('index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 app.use('/', indexRouter);
