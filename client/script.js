@@ -1,5 +1,5 @@
 const Data_API = "https://testserviceapptest.azurewebsites.net/data_update";
-const Data_API = "https://testserviceapptest.azurewebsites.net/devices";
+const DeviceList_API = "https://testserviceapptest.azurewebsites.net/devices";
 //const Data_API = "http://localhost:3000/data_update";
 //const DeviceList_API = "http://localhost:3000/devices";
 
