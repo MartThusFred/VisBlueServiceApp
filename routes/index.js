@@ -22,5 +22,11 @@ router.get("/data_update", function (req, res, next) {
   });
 });
 
+router.get("/devices", function (req, res, next) {
+  sql.getDeviceList_withQuery().then((result) => {
+    res.json(result[0]);
+  });
+});
+
 
 module.exports = router;

@@ -1,9 +1,12 @@
-const API_URL = "https://testserviceapptest.azurewebsites.net/data_update"
+const Data_API = "https://testserviceapptest.azurewebsites.net/data_update";
+const Data_API = "https://testserviceapptest.azurewebsites.net/devices";
+//const Data_API = "http://localhost:3000/data_update";
+//const DeviceList_API = "http://localhost:3000/devices";
 
 var dataList = [];
 var setup = [];
 
-getData()
+getDevices()
     .then(setUpSite);
 
 function setUpSite(data) {
@@ -12,27 +15,31 @@ function setUpSite(data) {
         var div = document.createElement('div');
         div.setAttribute('id', 'datarow')
         div.innerHTML += `
-        <p> Batteri (${element.ConnectionDeviceId}): </p>
+        <p> Batteri (${element.Title}): </p>
         <div id="visteData">
-            <p>Alarm discharge 1 = <p id="${element.ConnectionDeviceId}"> </p></p>
+            <p>Alarm discharge 1 = <p id="${element.Title}"> </p></p>
 
-        <div id="${element.ConnectionDeviceId}-status"></div>    
+        <div id="${element.Title}-status"></div>    
         </div>
         ` 
-        
         //document.getElementById(element.ConnectionDeviceId).style.backgroundColor = "white";
         document.getElementById("data").appendChild(div);
     });
 } 
 
+function getDevices() {
+    return fetch(DeviceList_API)
+    .then(res => res.json());
+}
+
 setInterval(() => {
     getData()
         .then(DisplayData);
-}, 2000)
+}, 20 * 1000) // (hvor mange sekunder og så ganger vi millisec på)
 
 
 function getData() {
-    return fetch(API_URL)
+    return fetch(Data_API)
     .then(res => res.json());
 }
 
