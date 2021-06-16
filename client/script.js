@@ -1,10 +1,12 @@
-const Data_API = "https://testserviceapptest.azurewebsites.net/data_update";
-const DeviceList_API = "https://testserviceapptest.azurewebsites.net/devices";
-//const Data_API = "http://localhost:3000/data_update";
-//const DeviceList_API = "http://localhost:3000/devices";
+//const Data_API = "https://testserviceapptest.azurewebsites.net/data_update";
+//const DeviceList_API = "https://testserviceapptest.azurewebsites.net/devices";
+const Data_API = "http://localhost:3000/data_update";
+const DeviceList_API = "http://localhost:3000/devices";
 
 var dataList = [];
 var setup = [];
+var old1 = "VRFB_E3T2.1H1S0.1C1I1_02015";
+var old2 = "VRFB_test1_02014";
 
 getDevices()
     .then(setUpSite);
@@ -12,6 +14,9 @@ getDevices()
 function setUpSite(data) {
     setup = data;
     setup.forEach(element => {
+        if (element.Title == old1 || element.Title == old2) {
+            // nothing 
+        } else {
         var div = document.createElement('div');
         div.setAttribute('id', 'datarow')
         div.innerHTML += `
@@ -21,8 +26,8 @@ function setUpSite(data) {
             <p>Alarm2 = <p id="${element.Title}-A2"> </p></p>
         </div>
         ` 
-        //document.getElementById(element.ConnectionDeviceId).style.backgroundColor = "white";
         document.getElementById("data").appendChild(div);
+        }
     });
 } 
 
