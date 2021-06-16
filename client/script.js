@@ -17,9 +17,8 @@ function setUpSite(data) {
         div.innerHTML += `
         <p> Batteri (${element.Title}): </p>
         <div id="visteData">
-            <p>Alarm discharge 1 = <p id="${element.Title}"> </p></p>
-
-        <div id="${element.Title}-status"></div>    
+            <p>Alarm1 = <p id="${element.Title}-A1"> </p></p>
+            <p>Alarm2 = <p id="${element.Title}-A2"> </p></p>
         </div>
         ` 
         //document.getElementById(element.ConnectionDeviceId).style.backgroundColor = "white";
@@ -46,13 +45,21 @@ function getData() {
 function DisplayData(data) {
     dataList = data;
     dataList.forEach(dataElement => {
-        document.getElementById(dataElement.ConnectionDeviceId).innerHTML = dataElement.Alarm1;
-        document.getElementById(dataElement.ConnectionDeviceId).style.height = "2ch";
-        document.getElementById(dataElement.ConnectionDeviceId).style.width = "5ch";
+        document.getElementById(dataElement.ConnectionDeviceId + "-A1").innerHTML = dataElement.Alarm1;
+        document.getElementById(dataElement.ConnectionDeviceId + "-A1").style.height = "2ch";
+        document.getElementById(dataElement.ConnectionDeviceId + "-A1").style.width = "5ch";
+        document.getElementById(dataElement.ConnectionDeviceId + "-A2").innerHTML = dataElement.Alarm2;
+        document.getElementById(dataElement.ConnectionDeviceId + "-A2").style.height = "2ch";
+        document.getElementById(dataElement.ConnectionDeviceId + "-A2").style.width = "5ch";
         if(dataElement.Alarm1 > 0) {
-            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "red";
+            document.getElementById(dataElement.ConnectionDeviceId + "-A1").style.backgroundColor = "red";
         } else {
-            document.getElementById(dataElement.ConnectionDeviceId).style.backgroundColor = "green";
+            document.getElementById(dataElement.ConnectionDeviceId + "-A1").style.backgroundColor = "green";
+        }
+        if(dataElement.Alarm2 > 0) {
+            document.getElementById(dataElement.ConnectionDeviceId + "-A2").style.backgroundColor = "red";
+        } else {
+            document.getElementById(dataElement.ConnectionDeviceId + "-A2").style.backgroundColor = "green";
         }
     });
 }

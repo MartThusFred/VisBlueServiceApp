@@ -52,3 +52,7 @@ padding: 10px;
     justify-content: space-between;
     width: 40%;
 }
+
+#content {
+    display: inline-block;
+}
