@@ -14,7 +14,7 @@ console.log(" mathus-error :" + error);
 async function getdata_withQuery() {
     try {
       let pool = await sql.connect(config);
-      let res = await pool.request().query("SELECT TOP (100) Id, ConnectionDeviceId, Alarm1, Alarm2 FROM dbo.BatteryData ORDER BY Id DESC");
+      let res = await pool.request().query("SELECT TOP (10) Id, ConnectionDeviceId, Alarm1, Alarm2 FROM dbo.BatteryData ORDER BY Id DESC");
       return res.recordsets;
     } catch (error) {
       console.log(" mathus-error :" + error);
